@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>layout</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<style>
+	img{width:100%;display: block;}
+		.container{width: 1000px;margin:0 auto;_background: #f00;}
+		.row{}
+		.row:after{content:"";display: block;clear: both;}
+		.row div[class*="span"]{float:left;margin-left:2%;}
+		.row div[class*="span"]:first-child{margin-left:0;}
+		.span_6{width:49%;}
+		.span_4{width:32%;}
+		.span_3{width:23.5%;}
+
+		/*card*/
+		.card{border:1px solid #ddd;border-radius:10px}
+		.card-img-top{border-radius:10px 10px 0 0;}
+		.card-body{padding:20px;}
+		.card-body .card-title{font-size:18px;margin-bottom:10px;}
+		.card-body .card-text{font-size:14px;margin-bottom:10px;}
+		
+		/*button*/
+		.btn{padding:5px 10px;text-align:center;border-radius:5px}
+		.btn a{color:#fff;display: block;line-height:30px;}
+
+		/*button color*/
+		.btn.blue{background:#007bff;}
+		.btn.pink{background:red;}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="span_6">
+				<div class="card">
+					<img src="../images/testimg.jpg" alt="card image" class="card-img-top">
+					<div class="card-body">
+						<h4 class="card-title">한성용</h4>
+						<p class="card-text">대표</p>
+						<div class="btn blue"><a href="tel:01063122268">010-6312-2268</a></div>
+					</div>
+
+				</div>
+			</div>
+			<div class="span_6">
+				<div class="card">
+					<img src="../images/testimg.jpg" alt="card image" class="card-img-top">
+					<div class="card-body">
+						<h4 class="card-title">한성용</h4>
+						<p class="card-text">대표</p>
+						<div class="btn pink"><a href="tel:01063122268">010-6312-2268</a></div>
+					</div>
+
+				</div>
+			</div>
+			
+		</div>
+		<div class="row">
+			<div class="span_4">
+				<div class="card">
+					<img src="../images/testimg.jpg" alt="card image" class="card-img-top">
+					<div class="card-body">
+						<h4 class="card-title">한성용</h4>
+						<p class="card-text">대표</p>
+						<div class="btn pink"><a href="tel:01063122268">010-6312-2268</a></div>
+					</div>
+				</div>
+			</div>
+			<div class="span_4">
+				<div class="card">
+					<img src="../images/testimg.jpg" alt="card image" class="card-img-top">
+					<div class="card-body">
+						<h4 class="card-title">한성용</h4>
+						<p class="card-text">대표</p>
+						<div class="btn pink"><a href="tel:01063122268">010-6312-2268</a></div>
+					</div>
+				</div>
+			</div>
+			<div class="span_4">
+				<div class="card">
+					<img src="../images/testimg.jpg" alt="card image" class="card-img-top">
+					<div class="card-body">
+						<h4 class="card-title">한성용</h4>
+						<p class="card-text">대표</p>
+						<div class="btn pink"><a href="tel:01063122268">010-6312-2268</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="span_3">
+				<div class="card">
+					<img src="../images/testimg.jpg" alt="card image" class="card-img-top">
+					<div class="card-body">
+						<h4 class="card-title">한성용</h4>
+						<p class="card-text">대표</p>
+						<div class="btn pink"><a href="tel:01063122268">010-6312-2268</a></div>
+					</div>
+				</div>
+			</div>
+			<div class="span_3">
+				<div class="card">
+					<img src="../images/testimg.jpg" alt="card image" class="card-img-top">
+					<div class="card-body">
+						<h4 class="card-title">한성용</h4>
+						<p class="card-text">대표</p>
+						<div class="btn pink"><a href="tel:01063122268">010-6312-2268</a></div>
+					</div>
+				</div>
+			</div>
+			<div class="span_3">
+				<div class="card">
+					<img src="../images/testimg.jpg" alt="card image" class="card-img-top">
+					<div class="card-body">
+						<h4 class="card-title">한성용</h4>
+						<p class="card-text">대표</p>
+						<div class="btn pink"><a href="tel:01063122268">010-6312-2268</a></div>
+					</div>
+				</div>
+			</div>
+			<div class="span_3">
+				<div class="card">
+					<img src="../images/testimg.jpg" alt="card image" class="card-img-top">
+					<div class="card-body">
+						<h4 class="card-title">한성용</h4>
+						<p class="card-text">대표</p>
+						<div class="btn pink"><a href="tel:01063122268">010-6312-2268</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</body>
+</html>
