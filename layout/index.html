@@ -6,8 +6,9 @@
 	<link rel="stylesheet" href="../css/reset.css">
 	<style>
 	img{width:100%;display: block;}
-		.container{width: 1000px;margin:0 auto;_background: #f00;}
-		.row{}
+		.container{}
+		.row{margin:0 auto;padding:5px;}
+		.row.w1000{width: 1000px;}
 		.row:after{content:"";display: block;clear: both;}
 		.row div[class*="span"]{float:left;margin-left:2%;}
 		.row div[class*="span"]:first-child{margin-left:0;}
@@ -16,24 +17,30 @@
 		.span_3{width:23.5%;}
 
 		/*card*/
-		.card{border:1px solid #ddd;border-radius:10px}
+		.card{border:1px solid #ddd;border-radius:10px;background: #fff;}
 		.card-img-top{border-radius:10px 10px 0 0;}
 		.card-body{padding:20px;}
 		.card-body .card-title{font-size:18px;margin-bottom:10px;}
 		.card-body .card-text{font-size:14px;margin-bottom:10px;}
 		
 		/*button*/
-		.btn{padding:5px 10px;text-align:center;border-radius:5px}
+		.btn{padding:5px 10px;text-align:center;border-radius:5px;transition:0.3s;}
 		.btn a{color:#fff;display: block;line-height:30px;}
 
 		/*button color*/
+		.btn.blue:hover{background:blue;}
+		.btn.pink:hover{background:orange;}
+		
 		.btn.blue{background:#007bff;}
 		.btn.pink{background:red;}
+
+		.container.bg-gary{background:gray;}
+		.container.bg-skyblue{background:skyblue;}
 	</style>
 </head>
 <body>
-	<div class="container">
-		<div class="row">
+	<div class="container bg-gary">
+		<div class="row w1000">
 			<div class="span_6">
 				<div class="card">
 					<img src="../images/testimg.jpg" alt="card image" class="card-img-top">
@@ -58,7 +65,9 @@
 			</div>
 			
 		</div>
-		<div class="row">
+	</div>
+	<div class="container">
+		<div class="row w1000">
 			<div class="span_4">
 				<div class="card">
 					<img src="../images/testimg.jpg" alt="card image" class="card-img-top">
@@ -90,7 +99,9 @@
 				</div>
 			</div>
 		</div>
-		<div class="row">
+	</div>
+	<div class="container bg-skyblue">
+		<div class="row w1000">
 			<div class="span_3">
 				<div class="card">
 					<img src="../images/testimg.jpg" alt="card image" class="card-img-top">
