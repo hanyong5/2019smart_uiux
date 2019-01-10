@@ -14,7 +14,27 @@
 			$("#btn").click(function(){
 				$("html,body").animate({scrollTop:100},1000);
 			});
+			showInfo();
 		});
+
+		$(window).on("resize",function(){
+			showInfo();
+		});
+
+		function showInfo(){
+			var strInfo = "$(document).width() =" + $(document).width() + "<br>";
+			strInfo += "$(document).height() =" + $(document).height() + "<br>";
+			$("#info").html(strInfo);
+			
+		};
+
+		$(window).on("scroll",function(){
+			// var scrollY = $("html,body").scrollTop();
+			var scrollY = window.pageYOffset;
+			console.log(scrollY);
+		});
+
+		
 	</script>
 
 </head>
