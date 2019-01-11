@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<style>
+		#panel{
+			width: 600px;height: 300px;
+			border: 1px solid #000;position: relative;
+			margin:0 auto;
+		}
+		#bar{
+			position: absolute;left:50px;top:190px;
+			width:500px;height:20px;background:#f30;
+		}
+		#img{
+			position: absolute;left:50px;top:120px;
+		}
+		.view{transform:rotateY(180deg);}
+	</style>
+	<script>
+		var nStartX;
+		var nEndX;
+		var nCurrent;
+		var nTimerId;
+		var nStep;
+		var objIMG;
+
+		
+		$(function(){
+			init();
+			initEventListener();
+		});
+
+		function init(){
+			 var objBar = $("#bar");
+			 //시작위치
+			 nStartX = objBar.position().left;
+			 //마지막위치
+			 nEndX = objBar.width() + nStartX -120;
+			 
+			 //현재위치
+			 nCurrentX = nStartX;
+			 nStep = 2;
+			 nTimerId = 0;
+
+			 objIMG = $("#img");
+		}
+		function initEventListener(){
+			$("#btn_start").on("click",function(){
+				start();
+			});
+			$("#btn_stop").on("click",function(){
+				stopMove();
+			});
+		}
+		function start(){
+			if(nTimerId == 0){
+			nTimerId = setInterval(startMove,30);
+			}
+			console.log(nTimerId);
+		}
+
+		function startMove(){
+			nCurrentX += nStep;
+
+			if(nCurrentX > nEndX){
+				nCurrentX = nEndX;
+				nStep = -2;
+				objIMG.addClass("view");
+			}
+			if(nCurrentX < nStartX){
+				nCurrentX = nStartX;
+				nStep = 2;
+				objIMG.removeClass();
+			}
+
+
+			objIMG.css("left",nCurrentX);
+		}
+
+		function stopMove(){
+			if(nTimerId != 0){
+				clearInterval(nTimerId);
+				nTimerId = 0;
+			}
+			console.log(nTimerId);
+
+		}
+
+	</script>
+</head>
+<body>
+	<div>
+		<div id="panel">
+			<div id="bar"></div>
+			<div id="img"><img src="../images/car.png" alt="자동차"></div>
+		</div>
+		<div id="nav">
+			<button id="btn_start">시작</button>
+			<button id="btn_stop">멈춤</button>
+		</div>
+	</div>
+	<style>
+		.menu{width:100px;line-height:40px;}
+		.menu:after{
+			content: "";
+		    border-bottom: 5px solid #f0ca29;
+		    width: 0;
+		    display: block;
+		    transition-duration: 0.4s;
+		    margin-top: -9px;
+		}
+		.menu.active:after{width: 100%;}
+	</style>
+	<div class="menu">news</div>
+	<script>
+		$("div.menu").hover(function(){
+			$(this).addClass("active");
+		},function(){
+			$(this).removeClass("active");
+		});
+	</script>
+	
+</body>
+</html>
