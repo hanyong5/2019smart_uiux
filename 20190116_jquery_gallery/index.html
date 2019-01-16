@@ -14,15 +14,54 @@
 		#thumbnail:after{conetent:"";display: block;clear: both;}
 		#thumbnail div{float: left;}
 		#thumbnail .container{width: 760px;height: 95px;overflow: hidden;position: relative;left:20px;}
-		#thumbnail .container ul{width:2304px;position: absolute;background: #f00;margin-left:-8px;left:-760px;}
-		#thumbnail .container ul li.thumb{float: left;width: 120px;height: 95px;margin-left: 8px;}
+		#thumbnail .container ul{width:2304px;position: absolute;background: #f00;margin-left:-8px;}
+		#thumbnail .container ul li.thumb{float: left;width: 120px;height: 95px;margin-left: 8px;cursor:pointer;}
 
-		#thumbnail .left{padding-top:30px;}
-		#thumbnail .right{float: right;padding-top:30px;}
+		#thumbnail .left{padding-top:30px;cursor:pointer;}
+		#thumbnail .right{float: right;padding-top:30px;cursor:pointer;}
 		#thumbnail .container ul li:nth-child(7),
 		#thumbnail .container ul li:nth-child(13){margin-left:0;}
-
 	</style>
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			var current = 0;
+			var $thumbnail = $("#thumbnail");
+			var $container = $thumbnail.find(".container > ul");
+			var $thumb = $container.find(".thumb");
+			var $image = $("#gallery #image > p");
+			var $prev = $thumbnail.find(".left");
+			var $next = $thumbnail.find(".right");
+
+			var $containerWidth = $thumbnail.find(".container").width();
+
+
+			$next.on("click",function(){
+				
+				if(current < 2){current++;}else{current=0;}
+				console.log(current);
+				listMove();
+			});
+
+			$prev.on("click",function(){
+				if(current > 0){current--;}else{current=2;}
+				console.log(current);
+				listMove();
+			});
+
+			function listMove(){
+				var tl = $containerWidth * current * -1;
+				// $container.css("left",tl);
+				$container.stop().animate({left:tl});
+			}
+
+			$thumb.on("click",function(){
+				$image.css("display","none");
+				var i = $(this).index();
+				$image.eq(i).css("display","block");
+			});
+		});
+	</script>
 </head>
 <body>
 	<div id="gallery">
