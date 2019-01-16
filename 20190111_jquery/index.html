@@ -105,6 +105,8 @@
 		</div>
 	</div>
 	<style>
+	ul>li{float: left;}
+	ul>li>a{display: block;padding:5px 10px;}
 		.menu{width:100px;line-height:40px;}
 		.menu:after{
 			content: "";
@@ -114,16 +116,23 @@
 		    transition-duration: 0.4s;
 		    margin-top: -9px;
 		}
-		.menu.active:after{width: 100%;}
+		.menu:hover:after{width: 100%;}
 	</style>
-	<div class="menu">news</div>
-	<script>
-		$("div.menu").hover(function(){
+		
+	<ul>
+		<li class="menu"><a href="#">menu1</a></li>
+		<li class="menu"><a href="#">menu2</a></li>
+		<li class="menu"><a href="#">menu3</a></li>
+		<li class="menu"><a href="#">menu4</a></li>
+	</ul>		
+
+	<!-- <script>
+		$(".menu").hover(function(){
 			$(this).addClass("active");
 		},function(){
 			$(this).removeClass("active");
 		});
-	</script>
+	</script> -->
 	
 </body>
 </html>
