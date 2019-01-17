@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>slide</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<style>
+		.clearfix:after{content:"";display: block;clear: both;}
+		.wrap{width: 1000px;margin:0 auto;}
+		.section{width: 100%;}
+		.banner{width: 100%;height: 400px;position: relative;overflow: hidden;}
+		.banner>ul{width:5000px;position: absolute;}
+		.banner>ul>li{float: left;width:1000px;}
+		.banner div.btn{width:100%;position: absolute;background: #fff;text-align:center;bottom:30px;}
+		#bt_prev,#bt_next{cursor:pointer;}
+	</style>
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script>
+		$(function(){
+			var current = 0;
+			$("#bt_next").click(function(){
+				current++;
+				listMove();
+			});
+			$("#bt_prev").click(function(){
+				current--;
+				listMove();
+			});
+			function listMove(){
+				$(".banner>ul").stop().animate({});
+			}
+		});
+	</script>
+</head>
+<body>
+	<div class="wrap">
+		<div class="section">
+			<div class="banner">
+				<ul class="clearfix">
+					<li><img src="../images/images01.jpg" alt="img01"></li>
+					<li><img src="../images/images02.jpg" alt="img02"></li>
+					<li><img src="../images/images03.jpg" alt="img03"></li>
+					<li><img src="../images/images04.jpg" alt="img04"></li>
+					<li><img src="../images/images05.jpg" alt="img05"></li>
+				</ul>
+				<div class="btn">
+					<span id="bt_prev">이전</span>
+					<span id="bt_next">이후</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
