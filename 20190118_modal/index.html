@@ -23,9 +23,8 @@
 				e.preventDefault();
 				$("#glayLayer").show();
 				$("#overLayer").show();
-
+				$("#overLayer").html("<img src='" + $(this).attr("href") + "'>");
 			});
-
 			$("#glayLayer,#overLayer").click(function(){
 				$("#glayLayer").hide();
 				$("#overLayer").hide();
