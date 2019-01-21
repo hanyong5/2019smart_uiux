@@ -5,6 +5,7 @@
 	<title>title</title>
 	<link rel="stylesheet" href="../css/reset.css">
 	<style>
+		.clearfix:after{content:"";display: block;clear: both;}
 		.box{}
 		.box >ul{}
 		.box >ul>li{float: left;width:200px;height: 200px;position: relative;cursor:pointer;overflow:hidden;border-radius:70px;box-shadow:2px 2px 10px #cdcdcd;margin-right:10px;}
@@ -21,8 +22,8 @@
 	</style>
 </head>
 <body>
-	<div class="box">
-		<ul>
+	<!-- <div class="box">
+		<ul class="clearfix">
 			<li>
 				<img src="../images/testimg.jpg" alt="">
 				<div class="black"></div>
@@ -35,6 +36,13 @@
 			</li>
 			
 		</ul>
+	</div> -->
+	<span style="width:200px;height:200px;margin:10px;_padding:20px;background:red;vertical-align: middle:">text</span>
+	<style>
+		.box01{display:table-cell;width: 200px;height: 200px;background:skyblue;vertical-align:middle;text-align:center;}
+	</style>
+	<div class="box01">
+		test
 	</div>
 </body>
 </html>
