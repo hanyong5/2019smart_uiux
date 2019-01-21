@@ -5,14 +5,17 @@
 	<title>title</title>
 	<link rel="stylesheet" href="../css/reset.css">
 	<style>
-		a:link,a:visited{color:white !important;}
-		body{background:url(../images/windmill.jpg) no-repeat right bottom fixed;background-size:cover;}
-		nav{width:100%;background:#000;height:40px;position: relative;}
+		body{background:url(../images/windmill.jpg) no-repeat right bottom fixed;background-size:cover;
+			a:link,a:hover,a:visited:white;
+		}
+		nav{width:100%;background:#000;}
 		nav ul{display: none;}
-		nav ul li a{display: block;width: 100%;text-align: center;line-height: 40px;font-weight: bold;}
-		/*nav a#trigger{line-height: 40px;width: 100%;}*/
-		/*nav a#trigger:after{content:"";position: absolute;width:30px;height: 30px;background:url(../images/nav.png) no-repeat;top:10px;right:15px;}*/
-		nav a#trigger{position: absolute;width:30px;height: 30px;top:10px;left:0px;}
+		nav ul li{}
+		nav ul li a{display: block;width: 100%;text-align: center;line-height: 40px;font-weight: bold;color:white;}
+		nav ul li a:link,nav ul li a:visited{color:white !important;}
+
+		nav a#trigger{display: block;line-height: 40px;width: 100%;position: relative;padding-left:40px;color:white;}
+		nav a#trigger:after{content:"";position: absolute;width:30px;height: 30px;background:url(../images/nav.png) no-repeat;top:10px;right:15px;}
 
 		@media screen and (min-width:721px){
 			nav{height: 40px;}
@@ -20,6 +23,7 @@
 			nav ul li{float: left;width:120px;border-right:1px solid #576979;}
 			nav ul li:last-child{border-right:0;}
 			nav a#trigger{display: none;}
+
 		}
 
 
@@ -27,23 +31,10 @@
 	<script src="../js/jquery-3.3.1.min.js"></script>
 	<script>
 		$(function(){
-			var num = 0;
-			
-				$("#tbutton").click(function(){
-					
-					if(num == 0){
-						$("#tbutton").attr("src","../images/fish1.png");
-						
-						$("nav ul").show();
-						num =1;
-					}else{
-						$("#tbutton").attr("src","../images/nav.png");
-						$("nav ul").hide();
-						num = 0;
-					}
-				});
-				//$("nav ul").toggle();
-			
+			$("#trigger").click(function(e){
+				e.preventDefault();
+				$("nav ul").slideToggle();
+			});
 			$(window).resize(function(){
 				var winWidth = $(window).width();
 				if( winWidth > 500){
@@ -56,9 +47,7 @@
 <body>
 	<!-- nav>(ul>li*6>a[#]>{menu$})+(a#trigger[#]>{menu}) -->
 	<nav>
-		<a href="#" id="trigger">
-			<img src="../images/nav.png" alt="menu" id="tbutton" width="20">
-		</a>
+		<a href="#" id="trigger">menu</a>
 		<ul>
 			<li><a href="#">menu1</a></li>
 			<li><a href="#">menu2</a></li>
