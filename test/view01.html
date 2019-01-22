@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>title</title>
+	<link rel="stylesheet" href="../css/reset.css">
+  <script src="../js/jquery-3.3.1.min.js"></script>
+	<script src="../js/jquery.mousewheel.js"></script>
+	
+	<style>
+		
+
+
+
+#home { 
+  background: url(../images/bg1.jpg) 50% 0 repeat fixed; min-height: 1000px; 
+  height: 100vh; 
+  margin: 0 auto; 
+  width: 100%; 
+  max-width: 1920px; 
+  position: relative; 
+}
+ 
+#home article { 
+  height: 458px; 
+  position: absolute; 
+  text-align: center; 
+  top: 150px; 
+  width: 100%; 
+}
+
+#home .item { 
+  height: 200px; 
+  position: absolute; 
+  text-align: center; 
+  top: 300px; 
+  width: 100%; 
+  background:red;
+}
+ 
+#about { 
+  background: url(../images/windmill.jpg) 50% 20px no-repeat fixed; min-height: 1000px; 
+  background-size:cover;
+  height: 100vh; 
+  margin: 0 auto; 
+  width: 100%; 
+  max-width: 1920px; 
+  position: relative; 
+  -webkit-box-shadow: 0 0 50px rgba(0,0,0,0.8);
+  box-shadow: 0 0 50px rgba(0,0,0,0.8);
+}
+ 
+#about article { 
+  height: 458px; 
+  position: absolute; 
+  text-align: center; 
+  top: 150px; 
+  width: 100%; 
+}
+
+
+#view { 
+  background: url(../images/bg3.jpg) 50% 0 repeat fixed; min-height: 1000px; 
+  height: 100vh; 
+  margin: 0 auto; 
+  width: 100%; 
+  max-width: 1920px; 
+  position: relative; 
+  -webkit-box-shadow: 0 0 50px rgba(0,0,0,0.8);
+  box-shadow: 0 0 50px rgba(0,0,0,0.8);
+}
+ 
+#view article { 
+  height: 458px; 
+  position: absolute; 
+  text-align: center; 
+  top: 150px; 
+  width: 100%; 
+}
+	</style>
+
+	<script>
+		$(document).ready(function(){
+		    $('section[data-type="background"]').each(function(){
+		        var $bgobj = $(this); // assigning the object
+		    
+		        $(window).scroll(function() {
+		        	var yPostop = $(window).scrollTop();
+		            var yPos = -(yPostop / $bgobj.data('speed')); 
+		            
+		            // Put together our final background position
+		            var coords = '50% '+ yPos + 'px';
+		            console.log(coords);
+
+		            // Move the background
+		            $bgobj.css({ backgroundPosition: coords });
+
+
+
+
+		        }); 
+		    });
+
+
+       
+
+        var moveTop = null;
+         $("section").mousewheel(function(event, delta) {
+                        
+                   if (delta < 0) {
+                        if ($(this).next() != undefined) {
+                            moveTop = $(this).next().offset().top;
+                        }
+                    // 마우스휠을 아래에서 위로
+                    } else {
+                        if ($(this).prev() != undefined) {
+                            moveTop = $(this).prev().offset().top;
+                        }
+                    }
+                    
+                    $("html,body").stop().animate({
+                        scrollTop: moveTop + 'px'
+                    },800);
+
+             });
+
+
+		});
+	</script>
+</head>
+<body>
+	<section id="home" data-type="background" data-speed="10" class="pages">     
+         <article>I am absolute positioned</article>
+
+    </section>   
+     
+	<section id="about" data-type="background" data-speed="10" class="pages">
+	         <article>Simple Parallax Scroll</article>
+	</section>
+
+	<section id="view" data-type="background" data-speed="10" class="pages">
+	         <article>Simple Parallax Scroll</article>
+	</section>
+</body>
+</html>
