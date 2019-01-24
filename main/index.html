@@ -10,6 +10,7 @@
 	<script src="./js/jquery-3.3.1.min.js"></script>
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 	<script src="./js/jquery.bxslider.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 	<script>
 		$(function(){
 			$(".slider").bxSlider();
@@ -30,12 +31,11 @@
 				
 				if ($scrollY >= sPos - 250 ){
 					
-
-					$("#section").find(".banner_item").each(function(index){
-						//$(this).addClass("view",function(){$(this).delay(1000)});
-						$(this).stop(true).delay(400*index).animate({top:'20px',opacity:1});
-					});
-
+					$("#section").find(".banner_item").eq(0).addClass("fadeInUp animated delay5");
+					$("#section").find(".banner_item").eq(1).addClass("fadeInUp animated delay10");
+					$("#section").find(".banner_item").eq(2).addClass("fadeInUp animated delay15");
+					$("#section").find(".banner_item").eq(3).addClass("fadeInUp animated delay20");
+					
 
 
 
@@ -161,9 +161,14 @@
 		#section .section_txt .title:after{content:"";display: block;position: absolute;width:30px;height:1px;background: #fff;left:50%;transform:translateX(-50%);}
 		#section .section_txt .content{font-size:2rem;text-align:center;}
 		#section .section_content{width:100%;}
-		#section .section_content .banner_item{width:25%;height:400px;float: left;position: relative;color:white;transition:.3s;opacity:0;_display:none;}
-
-		#section .section_content .banner_item.view{transform:translateY(50px);opacity:1;}
+		#section .section_content .banner_item{width:25%;height:400px;float: left;position: relative;color:white;transition:.3s;}
+		
+		#section .section_content .banner_item{opacity:0;}
+		#section .section_content .banner_item.delay5{animation-delay: .2s;}
+		#section .section_content .banner_item.delay10{animation-delay: .4s;}
+		#section .section_content .banner_item.delay15{animation-delay: .6s;}
+		#section .section_content .banner_item.delay20{animation-delay: .8s;}
+		
 		/*#section .section_content .banner_item.view:nth-child(1){animation-delay:.3s}
 		#section .section_content .banner_item:nth-child(2){animation-delay:1s;}
 		#section .section_content .banner_item.view:nth-child(3){animation-delay:.3s}
