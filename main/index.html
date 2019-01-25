@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 	<script>
 		$(function(){
-			$(".slider").bxSlider();
+			$(".slider").bxSlider({ariaLive:true});
 			var sPos = $("#section").offset().top;
 			console.log(sPos);
 			$(window).scroll(function(){
@@ -43,6 +43,24 @@
 
 
 			});
+
+
+
+			
+
+			var vNum;
+			var viewImg1 = $(".slider > div").eq(2).attr("aria-hidden");
+
+			if ( viewImg1 == true ){
+				$(".slider .txt_wrap").addClass("fadeInUp animated");
+				vNum = 1;
+			}else{
+				$(".slider .txt_wrap").removeClass("fadeInUp animated");
+				vNum = 0;
+			}
+
+			console.log(vNum);
+			
 		});
 
 

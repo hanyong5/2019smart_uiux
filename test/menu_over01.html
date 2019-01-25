@@ -58,10 +58,14 @@
 	<style>
 		.box{width:300px;height:300px;border: 1px solid #000;margin:0 auto;position: relative;overflow: hidden;}
 		.box:hover .bar{width:100%;transition:.3s;}
-		.box:hover img{width:110%;transition:.8s;}
+		/*.box:hover img{transform:scale(1.1) translate(-50%,-50%);transition:all 0.8s ease;}*/
 		.bar{position: absolute;width:0;height:10px;left:50%;background:darkblue;transform:translateX(-50%)}
 
-		.box img{width:120%;position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);}
+		/*.box img{_width:120%;position: absolute;left:50%;top:50%;transform:scale(1) translate(-50%,-50%);}*/
+
+
+		.box img {_overflow:hidden;width:100%;_height:500px;transition:all 1s;}
+.box:hover img {/*transform:scale(1.1);*/width: 110%;}
 	</style>
 	<div class="box">
 		<img src="../images/testimg.jpg" alt="">

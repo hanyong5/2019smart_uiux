@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>layer full</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script src="../js/jquery.mousewheel.js"></script>
+	<style>
+		html,body{width:100%;height: 100%;overflow:hidden;}
+		.containt_wrap{overflow:hidden;position: relative;width:100%;}
+		div.wrap{position: absolute;width:100%;}
+		div.wrap > div{position: relative;border-bottom:10px solid #000;}
+		div.first{background-color:blue;}
+		div.second{background-color:red;}
+		div.third{background-color:orange;}
+		div.forth{background-color:skyblue;}
+	</style>
+	<script>
+		var wHeight;
+		var coundDiv;
+		var i = 0;
+		var moveTop;
+		var stopPoint = false;
+
+		$(function(){
+			countDiv = $(".wrap > div").length;
+			wHeight = $(window).height();
+			$(".containt_wrap").css("height",wHeight * countDiv);
+		
+			layerHeight();
+			scrollMove();
+
+			
+			
+			
+			$(window).resize(function(){
+				var wHeight = $(window).height();
+				console.log(wHeight);
+
+				$(".wrap > div").each(function(){
+					$(this).css("height",wHeight);
+				});
+				scrollMove()
+
+			});
+
+
+			
+
+		});
+
+		function layerHeight(){
+
+			
+			$(".wrap > div").each(function(){
+				$(this).css("height",wHeight);
+			});
+		};
+
+		function scrollMove(){
+
+			$(".wrap > div").on("mousewheel DOMMouseScroll",function(event, delta) {
+                   console.log(delta);
+
+                   event.preventDefault();
+                   wHeight = $(window).height();
+
+                   if( stopPoint ){
+						return;
+					}
+					stopPoint = true;
+					setTimeout( function(){stopPoint = false}, 400);
+
+                  
+                   
+
+
+                   if (delta < 0 ) {
+             		 i++;
+					console.log("index"+i);
+
+					if( i > countDiv - 1){
+                   			i = countDiv - 1;
+                   	}
+
+                   	
+					moveTop = - i * wHeight;
+                    // 마우스휠을 아래에서 위로
+                    }
+
+
+                    if (delta > 0){
+                    	if(i==0){i=1}
+						i--;                        
+						moveTop = - i * wHeight;
+						console.log("index"+i);
+						if( i <0 && i == 0){
+                   			i=1;
+                   		}
+                    }
+
+                    console.log("이동"+moveTop);
+                    // 화면 이동 0.8초(800)
+                    $(".wrap").stop().animate({
+                        top: moveTop
+                    });
+                   		
+             });
+		}
+
+
+		
+	</script>
+</head>
+<body>
+	<!-- <div class="first">1</div> -->
+	<div class="containt_wrap">
+		<div class="wrap">
+			<div class="first">1</div>
+			<div class="second">2</div>
+			<div class="third">3</div>
+			<div class="forth">4</div>
+		</div>
+	</div>
+	
+</body>
+</html>
