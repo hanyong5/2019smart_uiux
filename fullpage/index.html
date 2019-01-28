@@ -44,6 +44,11 @@
 				menu:"#topMenu",
 				'afterLoad':function(anchorsLink,index){
 					console.log(index);
+					var myVideo = document.getElementById("video1"); 
+					if(index == 1){
+						if (myVideo.paused) {  myVideo.play(); }
+
+						}
 					if(index == 2){
 						$(".onview").addClass("mactive amck dkdkdk");
 					}else{
@@ -61,16 +66,17 @@
 			<li data-menuanchor="2st"><a href="#2st">menu2</a></li>
 			<li data-menuanchor="3st"><a href="#3st">menu3</a></li>
 			<li data-menuanchor="4st"><a href="#4st">menu4</a></li>
-			<li><a href="#">menu05</a></li>
-			<li><a href="#">menu06</a></li>
+
 		</ul>
+		
 	</nav>
 	<div id="fullpage">
 		<div class="section pages" id="page1" data-anchor="1st">
 			<div class="main_cmt">
-				<p>Lorem ipsum.</p>
-				<p>Lorem ipsum dolor sit.</p>
-				<a href="#">more</a>
+				<video id="video1" width="420" loop autoplay>
+				    <source src="../mp4/stream.mp4" type="video/mp4">
+
+				  </video>
 			</div>
 		</div>
 		<div class="section pages" id="page2" data-anchor="2st">

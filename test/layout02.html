@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>title</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		header#header{width:1000px;height:200px;margin:0 auto;border:5px solid blue;position: relative;}
+			#header h1{width:100px;height:70px;margin:0 auto;position: relative;border:5px solid gray;text-align:center;margin-top:10px;}
+			#header nav.util_menu{position: absolute;right:10px;top:10px;border:5px solid gray;width:100px;height:40px;}
+			#header nav.main_menu{position: absolute;height:70px;bottom:0px;border:5px solid gray;width: 990px;}
+		div#content_wrap{width:1000px;height:600px;margin:0 auto;border:5px solid orange;position: relative;}
+
+			div#content_wrap .content{width:690px;border:5px solid black;height:590px;}
+			div#content_wrap .aside{width:270px;border:5px solid black;height:590px;position: absolute;top:0;right:0;}
+		footer{width:1000px;height:200px;margin:0 auto;border:5px solid blue;}
+	</style>
+</head>
+<body>
+	<header id="header">
+		<h1>로고</h1>
+		<nav class="util_menu">util menu</nav>
+		<nav class="main_menu">main_menu</nav>
+	</header>
+	<div id="content_wrap">
+		<section class="content">content</section>
+		<aside class="aside">aside</aside>
+	</div>
+	<footer id="footer">footer</footer>
+</body>
+</html>
