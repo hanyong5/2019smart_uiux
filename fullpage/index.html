@@ -46,7 +46,7 @@
 					console.log(index);
 					var myVideo = document.getElementById("video1"); 
 					if(index == 1){
-					myVideo.play();
+						if (myVideo.paused) {  myVideo.play(); }
 
 						}
 					if(index == 2){
