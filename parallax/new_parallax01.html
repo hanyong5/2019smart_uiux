@@ -43,7 +43,16 @@
 	</style>
 	<script>
 	$(function(){
+		var $winWidth = $("body").width();
+		var $limitSize = 760;
+		var moveTop = null;
+		$(window).resize(function(){
+			var $winWidth = $("body").width();
+			console.log($winWidth);
+		});
 
+
+		
 	  $('.scene').parallaxScroll({
         friction:0.3
       });
@@ -70,9 +79,18 @@
 				});
 		});
 
-	   var moveTop = null;
-         	$("section").mousewheel(function(event, delta) {
-                        
+	   		
+	   		if($winWidth > $limitSize) {
+         	wheelMove();
+
+         	}
+
+	});
+
+	function wheelMove(){
+
+		$("section").mousewheel(function(event, delta) {
+                   
                    if (delta < 0) {
                         if ($(this).next() != undefined) {
                             moveTop = $(this).next().offset().top;
@@ -88,9 +106,8 @@
                         scrollTop: moveTop + 'px'
                     },800);
 
-             });
-
-	});
+       });
+	}
 	
 	</script>
 
