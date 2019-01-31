@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>parallax</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/animate.css">
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script src="../js/jquery.parallax-scroll.js"></script>
+	<script src="../js/jquery.mousewheel.js"></script>
+	<style>
+		.scene{
+			height:100vh;
+			background-size:cover;
+			background-attachment:fixed;
+			box-shadow: 0 0 50px rgba(0,0,0,0.8);
+		}
+		.scene.one{background-image:url(../images/pc01.jpg)}
+		.scene.two{background-image:url(../images/pc02.jpg)}
+		.scene.three{background-image:url(../images/pc03.jpg)}
+
+		.scene header{
+			max-width:80%;
+			color:white;
+			position: relative;
+			left:50%;
+			top:50%;
+			transform:translate(-50%,-50%);
+			text-align:center;
+			font-size:1.5rem;
+		}
+		.scene header{opacity:0;}
+		.scene header h1{margin-bottom:1rem;}
+		.scene header h1:after{
+			content:"";
+			border-bottom:1px solid white;
+			width:8rem;
+			display: block;
+			margin:0 auto;
+			margin-top:1rem;
+		}
+	</style>
+	<script>
+	$(function(){
+
+	  $('.scene').parallaxScroll({
+        friction:0.3
+      });
+
+       $('.scroll').click(function(e) {
+				e.preventDefault();
+				$('html, body').animate({scrollTop:$(this.hash).offset().top}, 500);
+	   });
+
+
+       $("section").eq(0).find("header").addClass("animated fadeIn");
+
+       $(window).scroll(function(){
+				var sct = window.pageYOffset;
+
+				$("section").each(function(index){
+					if (sct >= $(this).offset().top){
+						$(".scroll").removeClass("on");
+						$(".scroll").eq(index).addClass("on");
+						$("section header").removeClass("animated fadeIn");
+						$("section").eq(index).find("header").addClass("animated fadeIn");
+
+					}
+				});
+		});
+
+	   var moveTop = null;
+         	$("section").mousewheel(function(event, delta) {
+                        
+                   if (delta < 0) {
+                        if ($(this).next() != undefined) {
+                            moveTop = $(this).next().offset().top;
+                        }
+                    // 마우스휠을 아래에서 위로
+                    } else {
+                        if ($(this).prev() != undefined) {
+                            moveTop = $(this).prev().offset().top;
+                        }
+                    }
+                    
+                    $("html,body").stop().animate({
+                        scrollTop: moveTop + 'px'
+                    },800);
+
+             });
+
+	});
+	
+	</script>
+
+	<style>
+		.clearfix:after{content:"";clear: both;display: block;}
+		nav#navi{position:fixed;height:50px;background:#000;width:100%;z-index:9999;}
+		nav#navi a{color:white;}
+		nav#navi h1{width:150px;float: left;text-align:center;line-height:50px}
+		nav#navi .main-nav{float: left;}
+		nav#navi .main-nav li{float: left;}
+		nav#navi .main-nav li a.on{background:yellow;}
+		nav#navi .main-nav li a:hover{background:yellow;}
+		nav#navi .main-nav li a{display: block;line-height:50px;padding:0 20px;transition:.3s;}
+		
+
+	</style>
+</head>
+<body>
+	<nav id="navi" class="clearfix">
+      <h1><a href="#">COMPANY</a></h1>
+      <ul class="main-nav">			
+        <li><a href="#ms1" class="scroll on">Link 1</a></li>
+        <li><a href="#ms2" class="scroll">Link 2</a></li>
+        <li><a href="#ms3" class="scroll">Link 3</a></li>
+      </ul>
+    </nav>   
+
+	<section id="ms1" class="scene one"  data-width="1200" data-height="600">
+		<header>
+			<h1>Lorem ipsum dolor sit amet.</h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, facere.
+		</header>
+	</section>
+	<section id="ms2" class="scene two" data-width="1200" data-height="600">
+		<header>
+			<h1>Odit atque nulla, minus repellendus.</h1>Consequuntur iure atque quae laboriosam officia temporibus quia sint quisquam?
+		</header>
+	</section>
+	<section id="ms3" class="scene three" data-width="1200" data-height="600">
+		<header>
+			<h1>Tempore vero dolorem repellat consequuntur.</h1>Rem architecto sunt aliquam totam alias voluptates, ex sit harum.
+		</header>
+	</section>
+	
+</body>
+</html>

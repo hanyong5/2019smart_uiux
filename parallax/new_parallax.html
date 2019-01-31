@@ -5,6 +5,7 @@
 	<title>title</title>
 	<link rel="stylesheet" href="../css/reset.css">
 	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script src="../js/jquery.mousewheel.js"></script>
 	<script>
 		$(function(){
 
@@ -27,11 +28,15 @@
 		        section.each(function(i){
 		            var tg = $(this);
 		            var tt = -1 * sct + sectionInfo[i];
-		             tt *= 0.5;
+		            if(sct > sectionInfo[i]) tt *= 0.5;
 
 		            tg.css('top', tt);
 		        });
 		    });
+
+
+
+		   
 		});
 	</script>
 	<style>
