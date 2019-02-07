@@ -103,26 +103,7 @@
 
        
 
-        var moveTop = null;
-         $("section").mousewheel(function(event, delta) {
-                        
-                   if (delta < 0) {
-                        if ($(this).next() != undefined) {
-                            moveTop = $(this).next().offset().top;
-                        }
-                    // 마우스휠을 아래에서 위로
-                    } else {
-                        if ($(this).prev() != undefined) {
-                            moveTop = $(this).prev().offset().top;
-                        }
-                    }
-                    
-                    $("html,body").stop().animate({
-                        scrollTop: moveTop + 'px'
-                    },800);
-
-             });
-
+     
 
 		});
 	</script>

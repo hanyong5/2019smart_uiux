@@ -46,9 +46,18 @@
 		var $winWidth = $("body").width();
 		var $limitSize = 760;
 		var moveTop = null;
+		
 		$(window).resize(function(){
+			var $limitSize = 760;
 			var $winWidth = $("body").width();
-			console.log($winWidth);
+
+
+			if($winWidth > $limitSize) {
+			$("section").attr("data-width","1200");
+         	wheelMove();
+         	}else{
+         		$("section").attr("data-width","500");
+         	}
 		});
 
 
@@ -81,8 +90,10 @@
 
 	   		
 	   		if($winWidth > $limitSize) {
+			$("section").attr("data-width","1200");
          	wheelMove();
-
+         	}else{
+         		$("section").attr("data-width","500");
          	}
 
 	});
@@ -135,17 +146,17 @@
       </ul>
     </nav>   
 
-	<section id="ms1" class="scene one"  data-width="600" data-height="700">
+	<section id="ms1" class="scene one"  data-width="1200" data-height="600">
 		<header>
 			<h1>Lorem ipsum dolor sit amet.</h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, facere.
 		</header>
 	</section>
-	<section id="ms2" class="scene two" data-width="600" data-height="700">
+	<section id="ms2" class="scene two" data-width="1200" data-height="600">
 		<header>
 			<h1>Odit atque nulla, minus repellendus.</h1>Consequuntur iure atque quae laboriosam officia temporibus quia sint quisquam?
 		</header>
 	</section>
-	<section id="ms3" class="scene three" data-width="600" data-height="700">
+	<section id="ms3" class="scene three" data-width="1200" data-height="600">
 		<header>
 			<h1>Tempore vero dolorem repellat consequuntur.</h1>Rem architecto sunt aliquam totam alias voluptates, ex sit harum.
 		</header>

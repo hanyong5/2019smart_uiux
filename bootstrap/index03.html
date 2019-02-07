@@ -91,13 +91,18 @@
 		</a>
 	</div>
 </div>
+
 <div class="pt-5 pb-5 bg-grey" style="overflow:hidden;">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-5 mb-5">
-				<h2>Lorem ipsum dolor sit amet.</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est quo, omnis explicabo nobis corporis impedit recusandae architecto odio sit a.</p>
-				<a href="#" class="btn btn-primary">more</a>
+				<ul>
+					<li><a href="#">test</a><span>2019-01-31</span></li>
+					<li><a href="#">test</a><span>2019-01-31</span></li>
+					<li><a href="#">test</a><span>2019-01-31</span></li>
+					<li><a href="#">test</a><span>2019-01-31</span></li>
+					<li><a href="#">test</a><span>2019-01-31</span></li>
+				</ul>
 			</div>
 			<div class="col-md-7">
 				<img src="../images/bimg/symu-panel-1.png" alt="" class="slideInRight animated">
@@ -105,6 +110,16 @@
 		</div>
 	</div>
 </div>
+<style>
+	li{list-style:none;}
+	ul.notice{}
+	ul.notice>li{_background:gray;}
+	ul.notice>li:after{content:"";display: block;clear: both;}
+	ul.notice>li>a{line-height:2.5em;float: left;font-size:1.5em;width:250px;
+		white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+	ul.notice>li>div{float: right;line-height:2.5em;font-size:1.5em;}
+
+</style>
 <div class="pt-5 pb-5" style="overflow:hidden">
 	<div class="container">
 		<div class="row">
@@ -112,9 +127,13 @@
 				<img src="../images/bimg/symu-panel-2.png" alt="" class="slideInLeft animated">
 			</div>
 			<div class="col-md-5 mb-5">
-				<h2>Lorem ipsum dolor sit amet.</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est quo, omnis explicabo nobis corporis impedit recusandae architecto odio sit a.</p>
-				<a href="#" class="btn btn-primary">more</a>
+				<ul class="notice">
+					<li><a href="#">Lorem ipsum dolor sit amet.</a><div class="d-none d-sm-block">2019-01-31</div></li>
+					<li><a href="#">Lorem ipsum dolor sit amet.</a><div class="d-none d-sm-block">2019-01-31</div></li>
+					<li><a href="#">Lorem ipsum dolor sit amet.</a><div class="d-none d-sm-block">2019-01-31</div></li>
+					<li><a href="#">Lorem ipsum dolor sit amet.</a><div class="d-none d-sm-block">2019-01-31</div></li>
+					<li><a href="#">Lorem ipsum dolor sit amet.</a><div class="d-none d-sm-block">2019-01-31</div></li>
+				</ul>
 			</div>
 		</div>
 	</div>

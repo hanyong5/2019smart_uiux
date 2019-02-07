@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>title</title>
+	<style>
+		*{padding:0;margin:0;}
+		div.wrap{width:300px;padding:10px;background:black;}
+		div.wrap:after{content:"";clear: both;display: block;}
+		div.box1,div.box2,div.box3{width:100px;height:100px;float: left;border: 1px solid #fff;}
+
+		div.box1{background:red;}
+		div.box2{background:blue;}
+		div.box3{background:green;}
+
+		div.box4{background:orange;width:100px;height:100px;float: left;clear:both;}
+		div.box5{background:violet;width:100px;height:100px;float: left;}
+		div.box6{background:gray;width:100px;height:100px;float: left;}
+	</style>
+
+</head>
+<body>
+	<div class="wrap">
+		<div class="box1">test</div>
+		<div class="box2">test</div>
+		<div class="box3">test</div>
+	</div>
+	<div class="box4">1212</div>
+	<div class="box5">1212</div>
+	<div class="box6">1212</div>
+</body>
+</html>

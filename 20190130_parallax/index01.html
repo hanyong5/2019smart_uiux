@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>title</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<style>
+		.sky{
+			background:url(../images/bg1.png) 50% 0;
+			width:100%;
+			height:500px;
+			position: relative;
+		}
+		.sky article{
+			position: absolute;
+			top:150px;
+			left:40%;
+		}
+	</style>
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script>
+		$(function(){
+			$('section[data-type="background"]').each(function(){
+				var bg = $(this);
+				$(window).scroll(function(){
+					
+					var yPos = -( $(window).scrollTop() / bg.data('han'));
+					console.log("scroll:"+$(window).scrollTop()+" / bg:"+yPos);
+					var coords = '50%' + yPos +'px';
+					bg.css({backgroundPosition:coords});
+				});
+			});
+		});
+	</script>
+</head>
+<body>
+	<section class="sky" data-type="background" data-han="1">
+		<article><img src="../images/balloon.png" alt=""></article>
+	</section>
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo suscipit adipisci commodi asperiores minus, ipsum tempora architecto aperiam? Eligendi debitis ex consequatur repudiandae, aperiam quibusdam qui atque saepe! Animi a commodi ratione nisi adipisci error ipsum quidem ducimus blanditiis necessitatibus ab consectetur similique, nam velit architecto quod quasi expedita magnam, recusandae facere est aut. Delectus accusamus ex, blanditiis temporibus debitis veritatis ducimus nemo iure, corporis aut pariatur cumque dolor perferendis asperiores molestiae repudiandae qui laudantium placeat hic praesentium, provident labore quam dolores similique. Blanditiis dolor, assumenda exercitationem molestiae eum, enim harum tempora! Suscipit earum porro exercitationem officiis similique beatae quisquam consectetur deleniti voluptate adipisci praesentium, ratione quos illo sequi maxime perferendis distinctio, provident pariatur et ad numquam quae dolores. Voluptas dolore iure ullam quod! Iste, facere. Esse odio quaerat facere deserunt quisquam hic architecto itaque aliquam reprehenderit error aut, ducimus repellendus rem provident placeat dolorem ea suscipit! Quisquam assumenda sapiente placeat officia facilis obcaecati dicta quas excepturi nihil magnam expedita aliquid mollitia sequi aspernatur quam, quia error! Quis non est, asperiores suscipit. Numquam quibusdam cupiditate repellat dolore recusandae soluta quisquam, assumenda eos. Facere at iusto inventore dignissimos quas quod, autem nihil! Atque fuga, quam maxime provident unde obcaecati accusantium commodi.
+
+	<section class="sky" data-type="background" data-han="-0.5">
+		<article><img src="../images/balloon.png" alt=""></article>
+	</section>
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto magni eveniet optio, distinctio doloremque incidunt nemo recusandae repudiandae quaerat consequatur debitis cumque, enim dicta. Accusamus ipsa minus quia id saepe dolorem soluta ratione blanditiis, est quaerat magnam dolore reiciendis cupiditate? Dolor animi nam voluptas ea dolorem quisquam aspernatur! Quae ab ex vel suscipit ducimus reiciendis nesciunt, itaque earum facilis illum quia autem similique fugit sequi nobis aliquam eos reprehenderit temporibus rem corporis? Iusto reprehenderit tempora nulla excepturi minima neque itaque eveniet incidunt, dolorem quibusdam. Soluta libero doloribus, ratione voluptas totam distinctio laboriosam, suscipit illum porro ullam sunt tempore saepe sapiente.
+</body>
+</html>
