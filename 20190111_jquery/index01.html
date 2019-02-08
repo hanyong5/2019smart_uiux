@@ -62,14 +62,14 @@
 		});
 
 		function mScroll(){
-			var $menu = $(".menu-container");
-			var $menuPos = $menu.offset().top;
+			$menu = $(".menu-container");
+			$menuPos = $menu.offset().top;
 
-			var $car1 = $("#img01");
-			var $carPos = $car1.offset().top;
+			$car1 = $("#img01");
+			$carPos = $car1.offset().top;
 
-			var $car2 = $("#img02");
-			var $carPos2 = $car2.offset().top;
+			$car2 = $("#img02");
+			$carPos2 = $car2.offset().top;
 
 			
 				//var scrollY = window.pageYOffset;
@@ -80,14 +80,7 @@
 				}else{
 					$(".menu-container ul").removeClass("fixed");
 				}
-				// if(scrollY > 900){
-				// 	// $("#btn").fadeIn();
-				// 	 $("#btn").css("opacity",1);
-					
-				// }else{
-				// 	// $("#btn").fadeOut();
-				// 	$("#btn").css("opacity",0);
-				// }
+
 
 				if( scrollY > $carPos - 500){
 					$car1.css({left:300,opacity:1});
