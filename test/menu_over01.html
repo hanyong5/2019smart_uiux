@@ -72,5 +72,20 @@
 		<div class="bar"></div>
 		
 	</div>
+
+	<style>
+		.imgView{}
+		.imgView:after{content:"";clear: both;display: block;}
+		.imgView li{float: left;width:200px;height:200px;margin-left:10px;overflow:hidden;position: relative;background:red;}
+		.imgView img{position: absolute;width:100%;left:50%;top:50%;transform:translate(-50%,-50%);transition:.3s}
+		.imgView li:hover img{width:110%;left:50%;top:50%;transform:translate(-50%,-50%);position: absolute;}
+	</style>
+
+	<ul class="imgView">
+		<li><img src="../images/testimg01.jpg" alt=""></li>
+		<li><img src="../images/testimg01.jpg" alt=""></li>
+		<li><img src="../images/testimg01.jpg" alt=""></li>
+		<li><img src="../images/testimg01.jpg" alt=""></li>
+	</ul>
 </body>
 </html>
