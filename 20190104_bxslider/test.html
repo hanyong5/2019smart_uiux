@@ -82,5 +82,30 @@
 			</div>
 		</div>
 	</div>
+	<script>
+		$(function(){
+			$(".miniView").bxSlider({
+				auto: true,controls:false,pager:false,
+				maxSlides:4,moveSlides:1, slideWidth:930,
+				slideMargin:10,autoHover:true
+			});
+		});
+	</script>
+	<style>
+		.miniView{width:930px;}
+		.miniView li{width:222.5px !important;_height:222.5px;overflow:hidden;}
+		.miniView li img{transition:.3s}
+		.miniView li:hover img{top:0;left:0;transform:scale(1.1) }
+	</style>
+
+
+	<div class="container">
+		<ul class="miniView">
+			<li><img src="../images/testimg01.jpg" alt=""></li>
+			<li><img src="../images/testimg01.jpg" alt=""></li>
+			<li><img src="../images/testimg01.jpg" alt=""></li>
+			<li><img src="../images/testimg01.jpg" alt=""></li>
+		</ul>
+	</div>
 </body>
 </html>
