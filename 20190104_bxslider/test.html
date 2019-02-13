@@ -89,6 +89,19 @@
 				maxSlides:4,moveSlides:1, slideWidth:930,
 				slideMargin:10,autoHover:true
 			});
+			var mySlider01 = $(".vertical_slider").bxSlider({
+				mode:'vertical',
+				controls:false,
+				pager:false
+			});
+
+
+			$("#prevBtn").on("click",function(){
+				mySlider.goToPrevSlide();
+			});
+			$("#nextBtn").on("click",function(){
+				mySlider.goToNextSlide();
+			});
 		});
 	</script>
 	<style>
@@ -96,6 +109,12 @@
 		.miniView li{width:222.5px !important;_height:222.5px;overflow:hidden;}
 		.miniView li img{transition:.3s}
 		.miniView li:hover img{top:0;left:0;transform:scale(1.1) }
+
+
+		.vertical_slider li div{height:200px;}
+		.vertical_slider li div:nth-child(1){background:red;margin-bottom:10px;}
+		.vertical_slider li div:nth-child(2){background:blue;margin-bottom:10px;}
+		.vertical_slider li div:nth-child(3){background:gray}
 	</style>
 
 
@@ -106,6 +125,28 @@
 			<li><img src="../images/testimg01.jpg" alt=""></li>
 			<li><img src="../images/testimg01.jpg" alt=""></li>
 		</ul>
+	</div>
+	<div class="p-5" style="background:skyblue">
+		<div class="container">
+			<ul class="vertical_slider">
+				<li>
+					<div>1</div>
+					<div>2</div>
+					<div>3</div>
+				</li>
+				<li>
+					<div>1</div>
+					<div>2</div>
+					<div>3</div>
+				</li>
+			</ul>
+			<div class="left">
+				<i class="fal fa-angle-up"></i>
+			</div>
+			<div class="right">
+				<i class="fal fa-angle-down"></i>
+			</div>
+		</div>
 	</div>
 </body>
 </html>

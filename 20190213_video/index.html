@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<title>Fullscreen Background Video</title>
+		<link rel="stylesheet" href="../css/reset.css">
+		<script src="../js/jquery-3.3.1.min.js"></script>
+		<script src="../js/jquery.vide.js"></script>
+		<style>
+			html,body{width:100%;height:100%;}
+			.container{width:100%;height:100vh;}
+			.bg-sky{_background:skyblue;}
+			.bg-orange{background:orange;}
+		</style>
+		<script>
+			$(function(){
+				$("#video-1").vide("video/stream.mp4",{loop:true,muted:false});
+			});
+		</script>
+
+
+
+		
+	
+	</head>
+	<body>
+		<!-- <div class="container " data-vide-bg="video/stream.mp4" data-vide-option="loop:true,muted:false" id="video-1">
+		1
+		</div> -->
+
+		<div class="container" id="video-1">
+		1
+		</div>
+		<div class="container bg-orange">
+		2
+		</div>
+
+
+
+
+		
+	</body>
+</html>
